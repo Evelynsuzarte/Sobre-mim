@@ -4,6 +4,12 @@ const PAGE_SIZE = 6;
 const projectsGrid = document.getElementById("projects-grid");
 const projectsStatus = document.getElementById("projects-status");
 const paginationNav = document.getElementById("projects-pagination");
+const funAnimateBtn = document.getElementById("fun-animate-btn");
+const funBtnLabel = document.getElementById("fun-btn-label");
+const curtainOverlay = document.getElementById("curtain-overlay");
+const curtainReopenBtn = document.getElementById("curtain-reopen-btn");
+
+let isCurtainOpen = false;
 
 let allRepos = [];
 let currentPage = 1;
@@ -184,5 +190,72 @@ async function loadGitHubProjects() {
     projectsStatus.appendChild(fallbackLink);
   }
 }
+
+/**
+ * Atualiza o estado visual e de acessibilidade da cortina e do botão.
+ */
+function setCurtainState(open) {
+  if (!curtainOverlay) return;
+
+  isCurtainOpen = open;
+  curtainOverlay.classList.toggle("is-open", open);
+  curtainOverlay.setAttribute("aria-hidden", String(open));
+
+  if (funAnimateBtn && funBtnLabel) {
+    funBtnLabel.textContent = open ? "Fechar cortina" : "Abrir cortina";
+    funAnimateBtn.setAttribute("aria-pressed", String(!open));
+  }
+}
+
+/**
+ * Dispara uma animação divertida em cascata nos selos, etapas e estrelas.
+ */
+function triggerFunAnimation() {
+  const targets = document.querySelectorAll(
+    ".keyword-tag, .section-step, .tech-item, .project-stars"
+  );
+
+  targets.forEach((el, index) => {
+    el.classList.remove("is-fun-animating");
+    el.style.animationDelay = `${350 + Math.min(index * 35, 600)}ms`;
+    void el.offsetWidth;
+    el.classList.add("is-fun-animating");
+
+    el.addEventListener(
+      "animationend",
+      () => {
+        el.classList.remove("is-fun-animating");
+        el.style.animationDelay = "";
+      },
+      { once: true }
+    );
+  });
+}
+
+function toggleCurtain() {
+  if (isCurtainOpen) {
+    setCurtainState(false);
+  } else {
+    setCurtainState(true);
+    triggerFunAnimation();
+  }
+}
+
+if (funAnimateBtn) {
+  funAnimateBtn.addEventListener("click", toggleCurtain);
+}
+
+if (curtainReopenBtn) {
+  curtainReopenBtn.addEventListener("click", () => {
+    setCurtainState(true);
+    triggerFunAnimation();
+  });
+}
+
+window.addEventListener("load", () => {
+  requestAnimationFrame(() => {
+    setCurtainState(true);
+  });
+});
 
 loadGitHubProjects();
