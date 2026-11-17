@@ -4,7 +4,7 @@ Página pessoal desenvolvida em HTML, CSS e JavaScript puro para apresentar minh
 
 ## Acesse a página publicada
 
-👉 **[https://evelynsuzarte.github.io/Sobre-mim-AI/](https://evelynsuzarte.github.io/Sobre-mim-AI/)**
+👉 **[https://evelynsuzarte.github.io/Sobre-mim/](https://evelynsuzarte.github.io/Sobre-mim/)**
 
 ## Funcionalidades
 
