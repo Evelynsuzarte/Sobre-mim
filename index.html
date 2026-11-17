@@ -35,6 +35,7 @@
         <nav class="quick-nav" aria-label="Navegação rápida">
           <a href="#sobre">Sobre</a>
           <a href="#tecnologias">Tecnologias</a>
+          <a href="#projetos">Projetos</a>
         </nav>
 
         <div class="links" aria-label="Redes e links pessoais">
@@ -146,9 +147,34 @@
       </div>
     </section>
 
+    <section id="projetos" class="card" aria-labelledby="projetos-titulo">
+      <div class="section-header">
+        <span class="section-step">03</span>
+        <h2 id="projetos-titulo">Projetos</h2>
+      </div>
+      <p class="section-hint">
+        Repositórios públicos do GitHub ordenados por estrelas e atualizações recentes.
+      </p>
+
+      <p id="projects-status" class="projects-status">
+        Carregando projetos do GitHub...
+      </p>
+
+      <div id="projects-grid" class="projects-grid"></div>
+
+      <nav
+        id="projects-pagination"
+        class="pagination"
+        aria-label="Paginação de projetos"
+        hidden
+      ></nav>
+    </section>
+
     <footer class="footer">
       <p>Feito com HTML e CSS • Evelyn Suzarte</p>
     </footer>
   </main>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
