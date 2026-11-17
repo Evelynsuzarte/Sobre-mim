@@ -15,52 +15,134 @@
 <body>
   <main class="container">
     <header class="hero">
-      <span class="badge">Engenharia de Computação • UEFS</span>
+      <p class="eyebrow">Portfólio Pessoal • Feira de Santana, BA</p>
       <h1>Evelyn Suzarte</h1>
+
+      <ul class="keywords" aria-label="Palavras-chave">
+        <li class="keyword-tag keyword-highlight">Engenharia de Computação • UEFS</li>
+        <li class="keyword-tag">Desenvolvimento de Software</li>
+        <li class="keyword-tag">Backend &amp; Fullstack em formação</li>
+        <li class="keyword-tag">Dados</li>
+      </ul>
+
       <p class="intro">
         Meu nome é Evelyn, estudante de Bacharelado em Engenharia de Computação na
         Universidade Estadual de Feira de Santana (UEFS), com objetivo de me
         especializar em desenvolvimento de software.
       </p>
+
+      <div class="hero-footer">
+        <nav class="quick-nav" aria-label="Navegação rápida">
+          <a href="#sobre">Sobre</a>
+          <a href="#tecnologias">Tecnologias</a>
+        </nav>
+
+        <div class="links" aria-label="Redes e links pessoais">
+          <a
+            class="btn btn-github"
+            href="https://github.com/Evelynsuzarte"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>GitHub</span>
+            <span class="btn-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="btn btn-linkedin"
+            href="https://www.linkedin.com/in/evelyn-suzarte-008b7b181/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>LinkedIn</span>
+            <span class="btn-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
     </header>
 
-    <section class="card" aria-labelledby="sobre-titulo">
-      <h2 id="sobre-titulo">Sobre</h2>
-      <p>
-        Minha área de interesse é a área de desenvolvimento, apesar de atuar
+    <section id="sobre" class="card" aria-labelledby="sobre-titulo">
+      <div class="section-header">
+        <span class="section-step">01</span>
+        <h2 id="sobre-titulo">Sobre</h2>
+      </div>
+      <p class="sobre-resumo">
+        Minha área de interesse é o desenvolvimento de software, apesar de atuar
         atualmente com dados. Gosto muito de tecnologia, produzir coisas novas e
         estar sempre estudando.
       </p>
+
+      <div class="about-grid" aria-label="Detalhes sobre minha trajetória">
+        <article class="about-item">
+          <h3 class="about-label">Atuação e Foco</h3>
+          <p>
+            Atualmente trabalho com <strong>backend</strong>, tenho um pezinho no
+            <strong>frontend</strong> e sigo estudando para me tornar
+            <strong>fullstack</strong>.
+          </p>
+        </article>
+
+        <article class="about-item">
+          <h3 class="about-label">Experiência</h3>
+          <p>
+            Atuei em estágios nas áreas de <strong>desenvolvimento</strong> e
+            <strong>dados</strong>.
+          </p>
+        </article>
+
+        <article class="about-item">
+          <h3 class="about-label">TCC e Pesquisa</h3>
+          <p>
+            Trabalho de conclusão de curso sobre reconhecimento de vídeo em
+            <strong>Libras</strong> usando redes neurais
+            <strong>ResNet50 + LSTM</strong>.
+          </p>
+        </article>
+
+        <article class="about-item">
+          <h3 class="about-label">Localização e Oportunidades</h3>
+          <p>
+            Baseada em <strong>Feira de Santana, Bahia — Brasil</strong>. Aberta
+            a novas oportunidades para crescer academicamente e profissionalmente.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <section class="card" aria-labelledby="tecnologias-titulo">
-      <h2 id="tecnologias-titulo">Tecnologias que quero aprender</h2>
-      <ul class="tech-list">
-        <li class="tech-item">TypeScript</li>
-        <li class="tech-item">Angular</li>
-        <li class="tech-item">Kafka</li>
-      </ul>
-    </section>
+    <section id="tecnologias" class="card" aria-labelledby="tecnologias-titulo">
+      <div class="section-header">
+        <span class="section-step">02</span>
+        <h2 id="tecnologias-titulo">Stacks &amp; Tecnologias</h2>
+      </div>
 
-    <section class="card" aria-labelledby="contato-titulo">
-      <h2 id="contato-titulo">Conecte-se comigo</h2>
-      <div class="links">
-        <a
-          class="btn btn-github"
-          href="https://github.com/Evelynsuzarte"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-        <a
-          class="btn btn-linkedin"
-          href="https://www.linkedin.com/in/evelyn-suzarte-008b7b181/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
+      <div class="tech-group">
+        <h3 class="tech-subtitle">Tecnologias que tenho conhecimento</h3>
+        <ul class="tech-list">
+          <li class="tech-item">Python</li>
+          <li class="tech-item">C</li>
+          <li class="tech-item">Java</li>
+          <li class="tech-item">JavaScript</li>
+          <li class="tech-item">HTML5</li>
+          <li class="tech-item">CSS3</li>
+          <li class="tech-item">DOM</li>
+          <li class="tech-item">APIs</li>
+          <li class="tech-item">Banco de Dados</li>
+          <li class="tech-item">SQL</li>
+          <li class="tech-item">Linux</li>
+          <li class="tech-item">Arduino</li>
+          <li class="tech-item">Excel</li>
+          <li class="tech-item">Alteryx</li>
+          <li class="tech-item">Tableau</li>
+          <li class="tech-item">Microsoft Office</li>
+        </ul>
+      </div>
+
+      <div class="tech-group">
+        <h3 class="tech-subtitle">Tecnologias que quero aprender</h3>
+        <ul class="tech-list">
+          <li class="tech-item tech-item-learning">TypeScript</li>
+          <li class="tech-item tech-item-learning">Angular</li>
+          <li class="tech-item tech-item-learning">Kafka</li>
+        </ul>
       </div>
     </section>
 
