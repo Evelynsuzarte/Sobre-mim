@@ -6,10 +6,13 @@ const projectsStatus = document.getElementById("projects-status");
 const paginationNav = document.getElementById("projects-pagination");
 const funAnimateBtn = document.getElementById("fun-animate-btn");
 const funBtnLabel = document.getElementById("fun-btn-label");
+const themeToggleBtn = document.getElementById("theme-toggle-btn");
+const themeBtnLabel = document.getElementById("theme-btn-label");
 const curtainOverlay = document.getElementById("curtain-overlay");
 const curtainReopenBtn = document.getElementById("curtain-reopen-btn");
 
 let isCurtainOpen = false;
+const THEME_STORAGE_KEY = "evelyn-portfolio-theme";
 
 let allRepos = [];
 let currentPage = 1;
@@ -249,6 +252,31 @@ if (curtainReopenBtn) {
   curtainReopenBtn.addEventListener("click", () => {
     setCurtainState(true);
     triggerFunAnimation();
+  });
+}
+
+/**
+ * Aplica e salva o tema claro ou escuro.
+ */
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem(THEME_STORAGE_KEY, theme);
+
+  if (themeToggleBtn && themeBtnLabel) {
+    themeBtnLabel.textContent = isDark ? "Tema claro" : "Tema escuro";
+    themeToggleBtn.setAttribute("aria-pressed", String(isDark));
+  }
+}
+
+if (themeToggleBtn) {
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || "light";
+  applyTheme(savedTheme);
+
+  themeToggleBtn.addEventListener("click", () => {
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme") || "light";
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
   });
 }
 
