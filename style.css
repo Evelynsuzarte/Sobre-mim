@@ -1,0 +1,165 @@
+/* Variáveis de cores para facilitar futuras personalizações */
+:root {
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --surface-border: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.14);
+  --linkedin: #0a66c2;
+  --github: #24292f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cabeçalho / Apresentação */
+.hero {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.intro {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* Cartões das seções */
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 24px 32px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.card p {
+  color: var(--text-secondary);
+}
+
+/* Lista de tecnologias */
+.tech-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-item {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Links / Botões */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--surface-border);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.btn-github {
+  background-color: var(--github);
+}
+
+.btn-linkedin {
+  background-color: var(--linkedin);
+}
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding-top: 8px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  body {
+    padding: 24px 14px;
+  }
+
+  .hero,
+  .card {
+    padding: 22px;
+  }
+
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+}
